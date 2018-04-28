@@ -1,0 +1,2 @@
+# scoutbadge
+interactive scoutbadge emoji
