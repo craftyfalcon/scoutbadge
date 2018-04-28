@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>James' scout tent</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h1> James' scout Website </h1>
+<svg height="600" width="600">
+<polygon points="0,0 600,0 600,600 0,600" fill="white"/>
+<circle cx="300" cy="300" r="250" fill="url(#radialGrad1" id="badgebackground" stroke="#757575" stroke-width="7.5"/>
+<polygon points="150,400 450,400 300,100" fill="url(#radialGrad2)" id="tent"/>
+<polygon points="297,150 297,400 303,400 303,150" fill="000000" id="zip"/>
+<text id="sneeze" x="230" y="100" fill="#AA00FF" 
+    font-family="Verdana" font-size="40">
+        Scouts </text>
+<text id="sneeze" x="180" y="450" fill="#AA00FF" 
+    font-family="Verdana" font-size="40">
+        Be Prepared </text>
+        
+   <radialGradient id="radialGrad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="25%" stop-color="#9CCC65"/>
+    <stop offset="100%" stop-color="#558B2F" />
+</radialGradient> 
+<radialGradient id="radialGrad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="25%" stop-color="#FFCC00"/>
+    <stop offset="100%" stop-color="#E65100" />
+</radialGradient>
+
+<radialGradient id="radialGrad3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="25%" stop-color="#E65100"/>
+    <stop offset="100%" stop-color="#FFB300" />
+</radialGradient>
+<radialGradient id="radialGrad4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="25%" stop-color="#558B2F"/>
+    <stop offset="100%" stop-color="#4CAF50" />
+</radialGradient>
+<radialGradient id="radialGrad5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="25%" stop-color="#757575"/>
+    <stop offset="100%" stop-color="#BDBDBD" />
+</radialGradient>
+<circle cx="340" cy="275" r="40" fill="url(radialGrad2)" id="face"  />
+<circle cx="360" cy="270" r="10" fill="url(radialGrad2)" id="eye1"  />
+<circle cx="320" cy="270" r="10" fill="url(radialGrad2)" id="eye2"  />
+<circle cx="360" cy="270" r="5" fill="url(radialGrad2)" id="pupil1"  />
+<circle cx="320" cy="270" r="5" fill="url(radialGrad2)" id="pupil2"  />
+<path d="M 320 285 q 20 20 40 0" fill="url(radialGrad2)" id="smile"/>
+<path d="M 295 260 q 45 -50 90 0" fill="url(radialGrad2)" id="hat"/>
+</svg>
+
+<script>
+var badgeShape = $("#badgebackground");
+var isFacePink = true;
+
+var isFaceblue = true;
+var tentShape = $("#tent");
+
+var zip = $("#zip");
+var isFaceblack = true;
+
+var face = $("#face");
+var isFacebeige = true;
+
+var eye1 = $("#eye1");
+//var isFacebeige = true;
+var pupil1 = $("#pupil1");
+var pupil2 = $("#pupil2");
+
+var eye2 = $("#eye2");
+//var isFacebeige = true;
+
+var smile = $("#smile");
+
+var hat = $("#hat");
+
+//var isFacebeige = true;
+
+//badgeShape.click(function() {
+//    alert("clicked the badgebackground");
+//});
+
+badgeShape.click(function() {
+  //badgeShape.attr("fill", "url(#radialGrad3)");
+  if (isFacePink) {
+    badgeShape.attr("fill", "url(#radialGrad3");
+    tentShape.attr("fill", "url(#radialGrad4");
+    isFacePink = false;
+  } else {
+    badgeShape.attr("fill", "url(#radialGrad1");
+    tentShape.attr("fill", "url(#radialGrad2");
+    isFacePink = true;
+  }
+});
+
+
+tentShape.click(function() {
+      if (isFaceblue) {
+        tentShape.attr("fill", "url(#radialGrad4");
+        zip.attr("points", "297,150 297,400 380,400")
+        zip.attr("fill", "#212121")
+        face.attr("fill", "#FFD180")
+        eye1.attr("fill", "#827717")
+        eye2.attr("fill", "#827717")
+         pupil1.attr("fill", "#000000")
+        pupil2.attr("fill", "#000000")
+        smile.attr("fill", "#F44336")
+        hat.attr("fill", "#795548")
+        isFaceblue = false;
+
+
+
+      } else {
+        tentShape.attr("fill", "url(#radialGrad2");
+        isFaceblue = true;
+        zip.attr("points", "297,150 297,400 303,400 303,150")
+        zip.attr("fill", "000000")
+        face.attr("fill", "url(radialGrad2)")
+        eye1.attr("fill", "url(radialGrad2)")
+        eye2.attr("fill", "url(radialGrad2)")
+        pupil1.attr("fill", "url(radialGrad2)")
+        pupil2.attr("fill", "url(radialGrad2)")
+        smile.attr("fill", "url(radialGrad2)")
+        hat.attr("fill", "url(radialGrad2)")
+        
+        
+         
+
+        }
+
+
+      });
+
+</script>
+</body>
+</html>
